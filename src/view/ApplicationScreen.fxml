@@ -21,7 +21,7 @@
    <top>
       <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#goToWelcomeScreen" text="Logout" />
          </children>
          <padding>
             <Insets bottom="5.0" right="5.0" top="5.0" />
