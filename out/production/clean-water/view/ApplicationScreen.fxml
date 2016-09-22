@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
 
@@ -6,3 +7,36 @@
 <GridPane fx:controller="controller.WelcomeScreenController"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
 </GridPane>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationScreenController">
+   <center>
+      <Label text="Application Screen" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+   </center>
+   <top>
+      <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#goToWelcomeScreen" text="Logout" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </top>
+</BorderPane>
+>>>>>>> 110514aae67153eb3920d9b6c3574d14f910b8ff
