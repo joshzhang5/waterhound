@@ -1,9 +1,11 @@
 package controller;
 
 import fxapp.MainFXApplication;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -12,6 +14,10 @@ import javafx.stage.Stage;
  */
 public class ApplicationScreenController {
     private MainFXApplication mainApplication;
+
+    @FXML
+    private Button logoutButton;
+
     public void logoutClicked() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/WelcomeScreen.fxml"));
