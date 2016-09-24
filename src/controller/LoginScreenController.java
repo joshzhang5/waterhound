@@ -56,7 +56,19 @@ public class LoginScreenController {
     }
 
     public void loginClicked() {
-        if (usernameField.getText() != user || passwordField.getText() != pass){
+        if (usernameField.getText().equals("water") && passwordField.getText().equals("hound")) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));
+                stage.show();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        if (usernameField.getText() != "water" || passwordField.getText() != "hound"){
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Login Failed");
