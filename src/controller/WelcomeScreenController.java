@@ -6,7 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.scene.input.KeyEvent;
+import javafx.event.EventHandler;
+
+import java.awt.*;
 
 /**
  * Controller for welcome screen that allows user to enter login screen
@@ -18,6 +24,7 @@ public class WelcomeScreenController {
     @FXML
     public Button registerButton;
 
+    @FXML
     public void loginClicked() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/LoginScreen.fxml"));
