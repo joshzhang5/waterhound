@@ -28,9 +28,9 @@
         </rowConstraints>
          <children>
             <Label text="Username:" GridPane.rowIndex="2" />
-            <TextField fx:id="usernameField" onKeyPressed="#checkCapsU" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Password:" GridPane.rowIndex="3" />
-            <PasswordField fx:id="passwordField" onKeyPressed="#checkCapsP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label alignment="TOP_LEFT" text="Login">
                <font>
                   <Font size="22.0" />

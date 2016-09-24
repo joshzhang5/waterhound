@@ -44,6 +44,15 @@ public class LoginScreenController {
     public void backClicked() {
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/WelcomeScreen.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage1 = new Stage();
+            stage1.setScene(new Scene(root1));
+            stage1.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void loginClicked() {
@@ -52,6 +61,7 @@ public class LoginScreenController {
             alert.setTitle("Login Failed");
             alert.setHeaderText("Login Failed");
             alert.setContentText("Try retyping username and password");
+            loginAttempts++;
             alert.showAndWait();
         }
     }

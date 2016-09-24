@@ -29,6 +29,8 @@ public class WelcomeScreenController {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/LoginScreen.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage1 = (Stage) registerButton.getScene().getWindow();
+            stage1.close();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
             stage.show();

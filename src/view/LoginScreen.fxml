@@ -28,9 +28,9 @@
         </rowConstraints>
          <children>
             <Label text="Username:" GridPane.rowIndex="2" />
-            <TextField fx:id="usernameField" onKeyPressed="#checkCapsU" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Password:" GridPane.rowIndex="3" />
-            <PasswordField fx:id="passwordField" onKeyPressed="#checkCapsP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label alignment="TOP_LEFT" text="Login">
                <font>
                   <Font size="22.0" />
@@ -39,9 +39,9 @@
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
                   <Button fx:id="loginButton" mnemonicParsing="false" onMouseClicked="#loginClicked" text="Login" />
+                  <Button fx:id="backButton" alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#backClicked" text="Back" textAlignment="CENTER" />
                </children>
             </HBox>
-            <Button fx:id="backButton" alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#backClicked" text="Back" textAlignment="CENTER" GridPane.rowIndex="4" />
             <Label fx:id="labelCaps" text="Warning: CAPS is on" textFill="RED" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
