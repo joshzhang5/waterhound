@@ -22,7 +22,7 @@ public class ApplicationScreenController {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/WelcomeScreen.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
             stage.setScene(new Scene(root1));
             stage.show();
         } catch(Exception e) {

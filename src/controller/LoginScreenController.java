@@ -28,6 +28,9 @@ public class LoginScreenController {
     private Button backButton;
 
     @FXML
+    private Button loginButton;
+
+    @FXML
     public Label labelCaps;
 
     @FXML
@@ -47,7 +50,7 @@ public class LoginScreenController {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/WelcomeScreen.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage1 = new Stage();
+            Stage stage1 = (Stage) backButton.getScene().getWindow();
             stage1.setScene(new Scene(root1));
             stage1.show();
         } catch(Exception e) {
@@ -60,7 +63,7 @@ public class LoginScreenController {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
-                Stage stage = new Stage();
+                Stage stage = (Stage) loginButton.getScene().getWindow();
                 stage.setScene(new Scene(root1));
                 stage.show();
             } catch(Exception e) {
@@ -68,7 +71,7 @@ public class LoginScreenController {
             }
 
         }
-        if (usernameField.getText() != "water" || passwordField.getText() != "hound"){
+        if (!usernameField.getText().equals("water") && !passwordField.getText().equals("hound")){
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Login Failed");
