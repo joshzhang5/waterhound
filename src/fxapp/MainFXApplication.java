@@ -8,8 +8,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
 
 public class MainFXApplication extends Application {
+
     @FXML
     private Label labelCaps;
     @Override
