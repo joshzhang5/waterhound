@@ -15,6 +15,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import java.awt.event.KeyEvent;
 import javafx.scene.input.KeyCode;
+import model.User;
+import model.UserHashMap;
+
 import java.awt.Toolkit;
 
 
@@ -39,8 +42,6 @@ public class LoginScreenController {
     @FXML
     private TextField passwordField;
 
-    private final String user = "water";
-    private final String pass = "hound";
     private static int loginAttempts = 0;
 
 
@@ -59,7 +60,12 @@ public class LoginScreenController {
     }
 
     public void loginClicked() {
-        if (usernameField.getText().equals("water") && passwordField.getText().equals("hound")) {
+        String enteredUsername = usernameField.getText();
+        String enteredPassword = passwordField.getText();
+
+        User user = UserHashMap.soleInstance.get(enteredUsername);
+
+        if (user != null && user.isCorrectPassword(enteredPassword)) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
@@ -70,8 +76,7 @@ public class LoginScreenController {
                 e.printStackTrace();
             }
 
-        }
-        if (!usernameField.getText().equals("water") && !passwordField.getText().equals("hound")){
+        } else {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Login Failed");
             alert.setHeaderText("Login Failed");
@@ -79,6 +84,7 @@ public class LoginScreenController {
             loginAttempts++;
             alert.showAndWait();
         }
+
     }
 
 }
