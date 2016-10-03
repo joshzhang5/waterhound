@@ -17,6 +17,8 @@ public class ApplicationScreenController {
 
     @FXML
     private Button logoutButton;
+    @FXML
+    private Button profileButton;
 
     public void logoutClicked() {
         try {
@@ -29,4 +31,20 @@ public class ApplicationScreenController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    public void profileClicked() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ProfileScreen.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage1 = (Stage) profileButton.getScene().getWindow();
+            stage1.close();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+

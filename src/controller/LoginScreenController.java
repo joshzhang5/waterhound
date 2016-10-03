@@ -33,8 +33,6 @@ public class LoginScreenController {
     @FXML
     private Button loginButton;
 
-    @FXML
-    public Label labelCaps;
 
     @FXML
     private TextField usernameField;
@@ -70,7 +68,8 @@ public class LoginScreenController {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage) loginButton.getScene().getWindow();
-                stage.setScene(new Scene(root1));
+                Scene scene = new Scene(root1);
+                stage.setScene(scene);
                 stage.show();
             } catch(Exception e) {
                 e.printStackTrace();
