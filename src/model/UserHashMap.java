@@ -9,6 +9,8 @@ import java.util.Map;
 public enum UserHashMap {
     soleInstance;
 
+    private User currentUser; //Will be moved to security manager when that gets made
+
     private Map<String,User> users = new HashMap<String,User>();
 
     public void add(User user) {
@@ -17,5 +19,13 @@ public enum UserHashMap {
 
     public User get(String username) {
         return users.get(username);
+    }
+
+    public void setCurrentUser(User user) {
+        currentUser = user;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 }

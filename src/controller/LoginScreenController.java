@@ -43,6 +43,9 @@ public class LoginScreenController {
     private static int loginAttempts = 0;
 
 
+    /**
+     * Called when back button is clicked, goes back to welcome screen.
+     */
     public void backClicked() {
         Stage stage = (Stage) backButton.getScene().getWindow();
         stage.close();
@@ -57,6 +60,10 @@ public class LoginScreenController {
         }
     }
 
+    /**
+     * Called when login button is clicked, sets current user and
+     * goes to application screen if credentials are correct.
+     */
     public void loginClicked() {
         String enteredUsername = usernameField.getText();
         String enteredPassword = passwordField.getText();
@@ -65,6 +72,7 @@ public class LoginScreenController {
 
         if (user != null && user.isCorrectPassword(enteredPassword)) {
             try {
+                UserHashMap.soleInstance.setCurrentUser(user);
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = (Stage) loginButton.getScene().getWindow();

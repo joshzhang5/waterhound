@@ -19,7 +19,6 @@ import java.awt.*;
  */
 
 public class WelcomeScreenController {
-    private MainFXApplication mainApplication;
 
     @FXML
     public Button registerButton;

@@ -8,12 +8,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
+import model.User;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 
 public class MainFXApplication extends Application {
-
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -25,8 +26,6 @@ public class MainFXApplication extends Application {
 
 
         }
-
-    }
 
     public static void main(String[] args) {
         launch(args);
