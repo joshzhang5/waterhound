@@ -1,4 +1,4 @@
-package model;
+package model.user;
 
 /**
  * Enum for user types. Used in registration screen

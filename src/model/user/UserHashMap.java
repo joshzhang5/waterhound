@@ -1,10 +1,10 @@
-package model;
+package model.user;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by kruby on 10/2/16.
+ * Singleton hashmap of users, planning on moving to database
  */
 public enum UserHashMap {
     soleInstance;

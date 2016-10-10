@@ -8,8 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.User;
-import model.UserHashMap;
+import model.user.User;
+import model.user.UserHashMap;
 
 /**
  * Created by kruby on 10/2/16.
@@ -46,7 +46,7 @@ public class ProfileScreenController {
     private void backClicked() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.setScene(new Scene(root1));
             stage.show();
@@ -64,11 +64,11 @@ public class ProfileScreenController {
         try {
             FXMLLoader fxmlloader = new FXMLLoader();
             fxmlloader.setLocation(getClass().getResource("/view/ProfileEditDialog.fxml"));
-            Parent root1 = (Parent) fxmlloader.load();
+            Parent root1 = fxmlloader.load();
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Edit Profile");
             dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner( (Stage) editButton.getScene().getWindow());
+            dialogStage.initOwner(editButton.getScene().getWindow());
             Scene scene = new Scene(root1);
             dialogStage.setScene(scene);
             ProfileEditDialogController controller = fxmlloader.getController();

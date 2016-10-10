@@ -27,7 +27,7 @@ public class WelcomeScreenController {
     public void loginClicked() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/LoginScreen.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage1 = (Stage) registerButton.getScene().getWindow();
             stage1.close();
             Stage stage = new Stage();
@@ -41,7 +41,7 @@ public class WelcomeScreenController {
     public void registerClicked() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/RegistrationScreen.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage1 = (Stage) registerButton.getScene().getWindow();
             stage1.close();
             Stage stage = new Stage();

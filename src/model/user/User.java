@@ -1,4 +1,4 @@
-package model;
+package model.user;
 
 /**
  * Represents a user in the system

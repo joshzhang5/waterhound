@@ -7,11 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import model.User;
-import model.UserHashMap;
-import model.UserType;
-
-import java.util.Arrays;
+import model.user.User;
+import model.user.UserHashMap;
+import model.user.UserType;
 
 
 /**
@@ -52,7 +50,7 @@ public class RegistrationScreenController {
         stage.close();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/WelcomeScreen.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage1 = (Stage) backButton.getScene().getWindow();
             stage1.setScene(new Scene(root1));
             stage1.show();
@@ -67,7 +65,7 @@ public class RegistrationScreenController {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/LoginScreen.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage1 = (Stage) backButton.getScene().getWindow();
             stage1.setScene(new Scene(root1));
             stage1.show();

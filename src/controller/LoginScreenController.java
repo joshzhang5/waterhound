@@ -1,24 +1,17 @@
 package controller;
 
 import fxapp.MainFXApplication;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import java.awt.event.KeyEvent;
-import javafx.scene.input.KeyCode;
-import model.User;
-import model.UserHashMap;
-
-import java.awt.Toolkit;
+import model.user.User;
+import model.user.UserHashMap;
 
 
 /**
@@ -51,7 +44,7 @@ public class LoginScreenController {
         stage.close();
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/WelcomeScreen.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage1 = (Stage) backButton.getScene().getWindow();
             stage1.setScene(new Scene(root1));
             stage1.show();
@@ -74,7 +67,7 @@ public class LoginScreenController {
             try {
                 UserHashMap.soleInstance.setCurrentUser(user);
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
+                Parent root1 = fxmlLoader.load();
                 Stage stage = (Stage) loginButton.getScene().getWindow();
                 Scene scene = new Scene(root1);
                 stage.setScene(scene);

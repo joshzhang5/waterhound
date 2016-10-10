@@ -7,8 +7,8 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.User;
-import model.UserHashMap;
+import model.user.User;
+import model.user.UserHashMap;
 
 
 public class ProfileEditDialogController {
