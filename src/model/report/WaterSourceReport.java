@@ -4,6 +4,7 @@ import model.user.User;
 import model.user.UserHashMap;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *  A user can submit this report any time they are logged in. This report consists of:
@@ -71,5 +72,10 @@ public class WaterSourceReport {
 
     public WaterCondition getWaterCondition() {
         return waterCondition;
+    }
+
+    @Override
+    public String toString() {
+        return location + ", " + reportTime.format(DateTimeFormatter.ISO_LOCAL_DATE);
     }
 }

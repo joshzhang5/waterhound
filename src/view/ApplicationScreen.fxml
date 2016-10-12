@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationScreenController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationScreenController">
    <center>
       <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;/images/WaterHound_Logo_Tiny.png&quot;); -fx-background-size: 200 200;" />
             <Button fx:id="submitReportButton" mnemonicParsing="false" onAction="#submitReportClicked" text="Submit Report" />
-            <Button fx:id="viewReportsButton" mnemonicParsing="false" text="View Reports" />
+            <Button fx:id="viewReportsButton" mnemonicParsing="false" onMouseClicked="#viewReportsClicked" text="View Reports" />
          </children>
       </VBox>
    </center>

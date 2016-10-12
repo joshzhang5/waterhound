@@ -81,5 +81,22 @@ public class ApplicationScreenController {
             e.printStackTrace();
         }
     }
+
+
+    /**
+     * Called when the view reports button is clicked, goes to the view reports screen
+     */
+    @FXML
+    public void viewReportsClicked() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ViewReportsScreen.fxml"));
+            Parent root1 = fxmlLoader.load();
+            Stage stage1 = (Stage) viewReportsButton.getScene().getWindow();
+            stage1.setScene(new Scene(root1));
+            stage1.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 

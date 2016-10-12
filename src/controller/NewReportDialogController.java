@@ -2,6 +2,7 @@ package controller;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -49,6 +50,15 @@ public class NewReportDialogController {
      */
     @FXML
     private void confirmClicked() {
+        if (locationField.getText() == null || waterTypeChoiceBox.getValue() == null || waterConditionChoiceBox.getValue() == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Report Creation Failed");
+            alert.setHeaderText("Report Creation Failed");
+            alert.setContentText("No fields can be left empty");
+            alert.showAndWait();
+            return;
+        }
+
         WaterSourceReport report = new WaterSourceReport(locationField.getText(), waterTypeChoiceBox.getValue(),
                 waterConditionChoiceBox.getValue());
 

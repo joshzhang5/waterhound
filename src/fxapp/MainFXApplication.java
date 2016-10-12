@@ -10,14 +10,12 @@ public class MainFXApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../view/WelcomeScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/WelcomeScreen.fxml"));
         primaryStage.setTitle("Waterhound Clean Water Application");
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-
-
-        }
+    }
 
     public static void main(String[] args) {
         launch(args);
