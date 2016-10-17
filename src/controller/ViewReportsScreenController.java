@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.report.ReportList;
@@ -39,6 +40,8 @@ public class ViewReportsScreenController {
     private Label condLabel;
     @FXML
     private Button backButton;
+    @FXML
+    private AnchorPane mapAnchorPane;
 
 
     /**
@@ -58,6 +61,9 @@ public class ViewReportsScreenController {
         } else {
             reportList.getSelectionModel().selectFirst();
         }
+
+        loadMap();
+
     }
 
 
@@ -74,7 +80,7 @@ public class ViewReportsScreenController {
             typeLabel.setText("");
             condLabel.setText("");
         } else {
-            locLabel.setText(report.getLocation());
+            locLabel.setText(report.getLocation().toString());
             dateLabel.setText(report.getReportTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
             idLabel.setText(Integer.toString(report.getReportNumber()));
             subLabel.setText(report.getReporter().getUsername());
@@ -95,6 +101,20 @@ public class ViewReportsScreenController {
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.setScene(new Scene(root1));
             stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Loads Map Screen into the map anchor pane
+     */
+    private void loadMap() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MapScreen.fxml"));
+            Parent root = fxmlLoader.load();
+            mapAnchorPane.getChildren().setAll(root);
+
         } catch(Exception e) {
             e.printStackTrace();
         }
