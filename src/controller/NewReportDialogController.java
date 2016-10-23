@@ -63,14 +63,13 @@ public class NewReportDialogController {
             return;
         }
 
-        double latitude = 0;
-        double longitude = 0;
+        double latitude;
+        double longitude;
 
         //Convert text field entries to doubles
         try {
             latitude = Double.parseDouble(lattitudeField.getText());
             longitude = Double.parseDouble(longitudeField.getText());
-            System.err.println("lat: " + latitude + " , " + longitude);
         } catch (NumberFormatException e){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Invalid Latitude or Longitude");
@@ -95,9 +94,6 @@ public class NewReportDialogController {
                waterConditionChoiceBox.getValue());
 
         ReportList.soleInstance.add(report);
-
-        //Test remove later
-        report.getOutput();
 
         dialogStage.close();
     }

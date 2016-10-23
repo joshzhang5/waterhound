@@ -62,7 +62,6 @@ public class ViewReportsScreenController {
             reportList.getSelectionModel().selectFirst();
         }
 
-        loadMap();
 
     }
 
@@ -106,18 +105,5 @@ public class ViewReportsScreenController {
         }
     }
 
-    /**
-     * Loads Map Screen into the map anchor pane
-     */
-    private void loadMap() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MapScreen.fxml"));
-            Parent root = fxmlLoader.load();
-            mapAnchorPane.getChildren().setAll(root);
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
 

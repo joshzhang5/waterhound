@@ -43,14 +43,6 @@ public class WaterSourceReport {
         this.waterCondition = waterCondition;
     }
 
-    //Test to see if reports are working
-    public void getOutput() {
-        System.out.println("----------------------------------------");
-        System.out.println(reportNumber + " @ " + location.toString() + " at " + reportTime + " by " + reporter.getName());
-        System.out.println(waterType + " | " + waterCondition);
-        System.out.println("----------------------------------------");
-    }
-
     public LocalDateTime getReportTime() {
         return reportTime;
     }

@@ -8,24 +8,23 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="" scope="PROVIDED">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/MapTestApp2/lib/GMapsFX-2.0.9.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/GMapsFX-2.0.9.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="" scope="PROVIDED">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/MapTestApp2/lib/gson-2.7.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/gson-2.7.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" scope="PROVIDED" name="lib" level="project" />
   </component>
 </module>

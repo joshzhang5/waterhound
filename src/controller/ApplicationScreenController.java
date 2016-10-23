@@ -25,6 +25,8 @@ public class ApplicationScreenController {
     private Button submitReportButton;
     @FXML
     private Button viewReportsButton;
+    @FXML
+    private Button mapButton;
 
 
     /**
@@ -92,6 +94,22 @@ public class ApplicationScreenController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ViewReportsScreen.fxml"));
             Parent root1 = fxmlLoader.load();
             Stage stage1 = (Stage) viewReportsButton.getScene().getWindow();
+            stage1.setScene(new Scene(root1));
+            stage1.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Called when Water Availability button is clicked, goes to map screen
+     */
+    @FXML
+    public void mapButtonClicked() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/MapScreen.fxml"));
+            Parent root1 = fxmlLoader.load();
+            Stage stage1 = (Stage) mapButton.getScene().getWindow();
             stage1.setScene(new Scene(root1));
             stage1.show();
         } catch(Exception e) {

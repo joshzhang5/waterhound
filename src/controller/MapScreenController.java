@@ -7,7 +7,12 @@ import com.lynden.gmapsfx.javascript.object.*;
 import fxapp.MainFXApplication;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import model.report.Location;
 import model.report.ReportList;
 import model.report.WaterSourceReport;
@@ -20,11 +25,13 @@ import java.util.ResourceBundle;
 /**
  * Map view that is inside of view reports screen.
  */
-public class MapController implements Initializable, MapComponentInitializedListener {
+public class MapScreenController implements Initializable, MapComponentInitializedListener {
         private MainFXApplication mainApplication;
 
         @FXML
         private GoogleMapView mapView;
+        @FXML
+        private Button backButton;
         private GoogleMap map;
 
 
@@ -73,6 +80,12 @@ public class MapController implements Initializable, MapComponentInitializedList
                             InfoWindowOptions infoWindowOptions = new InfoWindowOptions();
                             infoWindowOptions.content(((WaterSourceReport) report).getWaterCondition().toString());
 
+                            infoWindowOptions.content("<h2>" + ((WaterSourceReport) report).getReportNumber() + "</h2>"
+                                    + ((WaterSourceReport) report).getLocation() + "<br>"
+                                    + ((WaterSourceReport) report).getReportTime()+ "<br>"
+                                    + ((WaterSourceReport) report).getWaterCondition()+ "<br>"
+                                    + ((WaterSourceReport) report).getWaterType() + "<br>"
+                                    + ((WaterSourceReport) report).getReporter().getUsername() + "<br>");
                             InfoWindow window = new InfoWindow(infoWindowOptions);
                             window.open(map, marker);
                         });
@@ -84,5 +97,17 @@ public class MapController implements Initializable, MapComponentInitializedList
         }
 
 
+    @FXML
+    private void backClicked() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ApplicationScreen.fxml"));
+            Parent root1 = fxmlLoader.load();
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }
