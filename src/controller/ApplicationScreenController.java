@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.user.UserHashMap;
+import model.user.UserType;
 
 /**
  * Controller for temporary application screen
@@ -22,11 +23,20 @@ public class ApplicationScreenController {
     @FXML
     private Button profileButton;
     @FXML
-    private Button submitReportButton;
+    private Button submitSourceReportButton;
+    @FXML
+    private Button submitPurityReportButton;
     @FXML
     private Button viewReportsButton;
     @FXML
     private Button mapButton;
+
+    @FXML
+    private void initialize() {
+        int userLevel = UserHashMap.soleInstance.getCurrentUser().getType().getLevel();
+
+        submitPurityReportButton.setDisable(userLevel < UserType.WORKER.getLevel());
+    }
 
 
     /**
@@ -62,7 +72,7 @@ public class ApplicationScreenController {
     }
 
     /**
-     * Called when submit report button is clicked, opens new report dialog
+     * Called when submit source report button is clicked, opens new source report dialog
      */
     @FXML
     public void submitReportClicked() {
@@ -71,12 +81,35 @@ public class ApplicationScreenController {
             fxmlloader.setLocation(getClass().getResource("/view/NewReportDialog.fxml"));
             Parent root1 = fxmlloader.load();
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("New Report");
+            dialogStage.setTitle("New Source Report");
             dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(submitReportButton.getScene().getWindow());
+            dialogStage.initOwner(submitSourceReportButton.getScene().getWindow());
             Scene scene = new Scene(root1);
             dialogStage.setScene(scene);
             NewReportDialogController controller = fxmlloader.getController();
+            controller.setDialogStage(dialogStage);
+            dialogStage.showAndWait();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Called when submit purity report button is clicked, opens new purity report dialog
+     */
+    @FXML
+    public void submitPurityClicked() {
+        try {
+            FXMLLoader fxmlloader = new FXMLLoader();
+            fxmlloader.setLocation(getClass().getResource("/view/NewPurityReportDialog.fxml"));
+            Parent root1 = fxmlloader.load();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("New Purity Report");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(submitSourceReportButton.getScene().getWindow());
+            Scene scene = new Scene(root1);
+            dialogStage.setScene(scene);
+            NewPurityReportDialogController controller = fxmlloader.getController();
             controller.setDialogStage(dialogStage);
             dialogStage.showAndWait();
         } catch(Exception e) {
