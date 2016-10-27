@@ -30,12 +30,16 @@ public class ApplicationScreenController {
     private Button viewReportsButton;
     @FXML
     private Button mapButton;
+    @FXML
+    private Button viewPurityReportButton;
+
 
     @FXML
     private void initialize() {
         int userLevel = UserHashMap.soleInstance.getCurrentUser().getType().getLevel();
 
         submitPurityReportButton.setDisable(userLevel < UserType.WORKER.getLevel());
+        viewPurityReportButton.setDisable(userLevel < UserType.WORKER.getLevel());
     }
 
 
@@ -127,6 +131,22 @@ public class ApplicationScreenController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ViewReportsScreen.fxml"));
             Parent root1 = fxmlLoader.load();
             Stage stage1 = (Stage) viewReportsButton.getScene().getWindow();
+            stage1.setScene(new Scene(root1));
+            stage1.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Called when the view reports button is clicked, goes to the view reports screen
+     */
+    @FXML
+    public void viewPurityReportClicked() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/ViewPurityReportsScreen.fxml"));
+            Parent root1 = fxmlLoader.load();
+            Stage stage1 = (Stage) viewPurityReportButton.getScene().getWindow();
             stage1.setScene(new Scene(root1));
             stage1.show();
         } catch(Exception e) {

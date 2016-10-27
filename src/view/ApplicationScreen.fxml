@@ -7,13 +7,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationScreenController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationScreenController">
    <center>
       <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;/images/WaterHound_Logo_Tiny.png&quot;); -fx-background-size: 200 200;" />
             <Button fx:id="mapButton" mnemonicParsing="false" onAction="#mapButtonClicked" text="Water Availability" />
-            <Button fx:id="viewReportsButton" mnemonicParsing="false" onMouseClicked="#viewReportsClicked" text="View Reports" />
+            <HBox alignment="TOP_CENTER" spacing="10.0">
+               <children>
+                  <Button fx:id="viewReportsButton" mnemonicParsing="false" onMouseClicked="#viewReportsClicked" text="View Source Reports" />
+                  <Button fx:id="viewPurityReportButton" mnemonicParsing="false" onAction="#viewPurityReportClicked" text="View Purity Reports" />
+               </children>
+            </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="44.0" prefWidth="600.0" spacing="10.0">
                <children>
                   <Button fx:id="submitSourceReportButton" alignment="CENTER" mnemonicParsing="false" onAction="#submitReportClicked" text="Submit Source Report" />

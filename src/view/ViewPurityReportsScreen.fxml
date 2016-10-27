@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="464.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewPurityReportsScreenController">
+    <children>
+        <ListView fx:id="reportList" prefHeight="464.0" prefWidth="252.0" />
+      <BorderPane prefHeight="464.0" prefWidth="558.0">
+         <center>
+            <VBox prefHeight="464.0" prefWidth="523.0" BorderPane.alignment="CENTER">
+               <children>
+                      <GridPane prefHeight="209.0" prefWidth="526.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="105.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="459.0" minWidth="10.0" prefWidth="398.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <Label prefWidth="97.0" text="Location:" />
+                              <Label text="Date:" GridPane.rowIndex="1" />
+                              <Label text="Report ID:" GridPane.rowIndex="2" />
+                              <Label fx:id="locLabel" prefHeight="21.0" prefWidth="82.0" text="Label" GridPane.columnIndex="1" />
+                              <Label fx:id="dateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Submitter:" GridPane.rowIndex="3" />
+                              <Label text="Condition:" GridPane.rowIndex="4" />
+                              <Label text="Virus PPM:" GridPane.rowIndex="5" />
+                              <Label fx:id="subLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="condLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="virusLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Contaminant PPM:" GridPane.rowIndex="6" />
+                        <Label fx:id="contamLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                          </children>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                      </GridPane>
+                  <AnchorPane fx:id="mapAnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+                <HBox alignment="BOTTOM_RIGHT" prefHeight="0.0" prefWidth="485.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button fx:id="backButton" alignment="BASELINE_RIGHT" mnemonicParsing="false" onMouseClicked="#backClicked" text="Back" />
+                    </children>
+                </HBox>
+         </bottom>
+      </BorderPane>
+    </children>
+</HBox>
